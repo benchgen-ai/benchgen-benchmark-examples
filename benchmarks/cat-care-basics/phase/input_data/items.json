@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "question": "Why do cats purr?",
+    "instruction": "Answer in two or three sentences."
+  },
+  {
+    "id": 1,
+    "question": "How should a new cat be introduced to a cat already living in the home?",
+    "instruction": "Answer in two or three sentences."
+  },
+  {
+    "id": 2,
+    "question": "What must a healthy cat diet contain?",
+    "instruction": "Answer in two or three sentences."
+  }
+]

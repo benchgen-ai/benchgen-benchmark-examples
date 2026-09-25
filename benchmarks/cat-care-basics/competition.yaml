@@ -1,0 +1,51 @@
+version: 2
+title: Cat Care Basics (Open Answers)
+description: Three open questions about cat care, scored on the key points each answer
+  mentions rather than on exact wording.
+benchmark_format: keywords
+# Required. Any image in the bundle; the platform shows it on the benchmark card.
+image: logo.png
+registration_auto_approve: true
+enable_detailed_results: true
+terms: terms.md
+
+pages:
+  - title: Overview
+    file: pages/overview.md
+
+tasks:
+  - index: 0
+    name: Main task
+    description: The single task this benchmark scores.
+    input_data: phase/input_data/
+    reference_data: phase/reference_data/
+    ingestion_program: ingestion_program/
+    scoring_program: scoring_program/
+
+phases:
+  - index: 0
+    name: Main phase
+    description: Submit a model and it is scored against every item.
+    tasks: [0]
+    start: '2020-01-01'
+    max_submissions_per_day: 20
+    max_submissions: 500
+
+# Every column key here must be a key the scoring program writes into
+# scores.json. scaffold --kind wrote these to match scoring.py METRICS.
+leaderboards:
+  - title: Results
+    key: main
+    columns:
+      - title: Overall
+        key: overall_accuracy
+        index: 0
+        sorting: desc
+      - title: Key point coverage
+        key: keyword_coverage
+        index: 1
+        sorting: desc
+      - title: All key points
+        key: all_keywords
+        index: 2
+        sorting: desc

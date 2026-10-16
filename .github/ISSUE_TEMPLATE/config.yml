@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Try Benchgen first
+    url: https://benchgen.com/benchmarks?utm_source=github&utm_medium=issue_template&utm_campaign=github-community&utm_content=contact-link
+    about: Run an existing benchmark, then come back with what is missing.
+  - name: Documentation
+    url: https://benchgen.com/docs?utm_source=github&utm_medium=issue_template&utm_campaign=github-community&utm_content=contact-link
+    about: Guides and API reference.
+  - name: Report a security problem
+    url: https://github.com/benchgen-ai/benchgen-benchmark-examples/blob/main/SECURITY.md
+    about: Please do not open a public issue for a vulnerability.

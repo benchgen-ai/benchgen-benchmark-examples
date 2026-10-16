@@ -40,3 +40,11 @@ phase/reference_data/   the answers
 
 `model.py` is injected by the platform at run time, so a bundle only has to meet the ingestion
 and scoring contract.
+
+## Contributing
+
+Bring an evaluation problem, propose a benchmark, or pick a [good first issue](https://github.com/benchgen-ai/benchgen-benchmark-examples/labels/good%20first%20issue). Read [CONTRIBUTING.md](CONTRIBUTING.md) first. Questions go in [Discussions](https://github.com/benchgen-ai/benchgen-benchmark-examples/discussions).
+
+## License
+
+[Apache License 2.0](LICENSE).

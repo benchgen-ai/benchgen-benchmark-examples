@@ -1,0 +1,87 @@
+name: Propose a benchmark
+description: Suggest a benchmark for this repository. Tell us what it measures and where the questions come from, before you write code.
+title: "[Benchmark] "
+labels: ["benchmark-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is **public**. Do not include secrets, customer data or confidential information.
+        A small, well-checked benchmark is better than a large one. Three to twenty items is a good start.
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: "Refund policy tool-choice check"
+    validations:
+      required: true
+  - type: textarea
+    id: measures
+    attributes:
+      label: What does it measure?
+      description: One clear thing, in two or three sentences. Also say what it does not cover.
+    validations:
+      required: true
+  - type: dropdown
+    id: scoring
+    attributes:
+      label: How would answers be scored?
+      options:
+        - Exact match
+        - Multiple choice
+        - Numeric answer
+        - Key points in an open answer
+        - Code or tool-call check
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: scorer
+    attributes:
+      label: Explain the scorer in two sentences
+      description: If an answer can be right in more than one way, how do you decide?
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: Where do the questions and answers come from?
+      options:
+        - I wrote them myself
+        - A public dataset with a licence that allows sharing
+        - Synthetic, generated and then checked by a person
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: Source and licence (if not written by you)
+      placeholder: "Dataset name, link, licence"
+  - type: textarea
+    id: samples
+    attributes:
+      label: Three sample items (synthetic or your own)
+      description: Question, expected answer, and how the scorer would mark a wrong one.
+      render: text
+    validations:
+      required: true
+  - type: dropdown
+    id: help
+    attributes:
+      label: Will you write the bundle?
+      options:
+        - Yes, I will open a pull request
+        - I would like help building it
+        - I just want to suggest it
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you submit
+      options:
+        - label: This issue contains no secrets, customer data or confidential information.
+          required: true
+        - label: I have the right to share these questions and answers.
+          required: true

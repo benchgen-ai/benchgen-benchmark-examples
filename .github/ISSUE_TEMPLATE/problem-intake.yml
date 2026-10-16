@@ -1,0 +1,84 @@
+name: Bring your evaluation problem
+description: Tell us a task your agent or model should do, and where it fails. The best ones become Benchmark Clinic sessions.
+title: "[Problem] "
+labels: ["problem-intake"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for bringing a problem. This issue is **public**.
+
+        - Do not paste API keys, customer data or anything confidential.
+        - Replace private data with a small synthetic example. We can only work through problems that can be shown.
+        - Not sure what to write? Answer the three boxes in your own words. Short is fine.
+  - type: input
+    id: summary
+    attributes:
+      label: One-line summary
+      description: What are you trying to evaluate?
+      placeholder: "Does our support agent pick the right tool for refund requests?"
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: The task
+      description: What should the agent or model do, and what does a good answer look like?
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: What it does today
+      description: How are you checking it now, and what setup do you use (model, agent framework, harness)?
+    validations:
+      required: true
+  - type: textarea
+    id: fails
+    attributes:
+      label: Where it fails
+      description: Describe one or two concrete failures. What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: dropdown
+    id: what
+    attributes:
+      label: What are you evaluating?
+      options:
+        - An AI agent
+        - A model
+        - A prompt or harness change
+        - A router or multi-agent setup
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: A small example (optional)
+      description: One input and the answer you expected. Use synthetic data only.
+      render: text
+  - type: dropdown
+    id: sharing
+    attributes:
+      label: Can we show this problem publicly?
+      options:
+        - Yes, as written
+        - Yes, after I replace private data with synthetic data
+        - No, keep it to the written description only
+    validations:
+      required: true
+  - type: input
+    id: credit
+    attributes:
+      label: How should we credit you? (optional)
+      description: A name or GitHub handle. Leave empty to stay unnamed. Do not put an email address here, this issue is public.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you submit
+      options:
+        - label: This issue contains no secrets, customer data or confidential information.
+          required: true
+        - label: We may use this problem in a public Benchmark Clinic session.
+          required: true
